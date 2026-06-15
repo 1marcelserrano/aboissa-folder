@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aboissa Commodity Brokers — Folder Institucional</title>
+<meta name="description" content="Corretora global de commodities desde 1987. Inteligência de mercado, negociação e execução em mais de 60 países.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Sans+3:wght@400;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color-navy:#0A2240;
+  --color-yellow:#FFB71B;
+  --color-cream:#F5F0E8;
+  --color-white:#FFFFFF;
+  --color-gold:#B68D40;
+  --color-softgold:#F4EBD0;
+  --color-steel:#2D5273;
+  --color-charcoal:#1A1A1A;
+  --font-heading:'Inter',sans-serif;
+  --font-body:'Source Sans 3',sans-serif;
+  --font-data:'Roboto Mono',monospace;
+  --space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px;
+  --radius-sm:4px;--radius-md:8px;--radius-pill:9999px;
+  --shadow-sticky:0 2px 8px rgba(10,34,64,.12);
+  --shadow-overlay:0 8px 24px rgba(10,34,64,.20);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);color:var(--color-charcoal);font-size:16px;line-height:1.6;background:var(--color-gold)}
+h1,h2,h3{font-family:var(--font-heading)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--space-lg)}
+.eyebrow{font-family:var(--font-heading);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.pill{display:inline-block;background:var(--color-yellow);color:var(--color-navy);font-family:var(--font-heading);font-weight:700;font-size:16px;border:none;border-radius:var(--radius-pill);padding:14px 32px;cursor:pointer;text-decoration:none}
+.pill:hover{filter:brightness(1.05)}
+#contato .pill{background:var(--color-softgold)}
+header{position:sticky;top:0;z-index:10;background:var(--color-navy);box-shadow:var(--shadow-sticky)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:10px;padding-bottom:10px}
+.logo-h svg{height:32px;width:auto;display:block}
+.langs{display:flex;gap:6px}
+.langs button{font-family:var(--font-heading);font-size:13px;font-weight:500;border-radius:var(--radius-pill);padding:5px 16px;border:1px solid var(--color-yellow);background:transparent;color:var(--color-yellow);cursor:pointer}
+.langs button.on{background:var(--color-yellow);color:var(--color-navy)}
+.hero{background:var(--color-navy);text-align:center;padding:64px 24px 72px}
+.hero .eyebrow{color:var(--color-gold);margin-bottom:16px}
+.hero h1{color:var(--color-softgold);font-size:clamp(28px,4.5vw,42px);font-weight:700;line-height:1.2;max-width:680px;margin:0 auto 16px}
+.hero p{color:rgba(244,235,208,.8);max-width:540px;margin:0 auto 32px}
+.stats{background:var(--color-cream);padding:var(--space-xl) 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--space-md);text-align:center}
+.stat-n{font-family:var(--font-heading);font-size:34px;font-weight:700;color:var(--color-navy)}
+.stat-l{font-size:14px;color:#4A5568}
+section.block{padding:var(--space-2xl) 0}
+section.block .eyebrow{color:var(--color-navy);margin-bottom:6px}
+section.block h2{font-size:26px;font-weight:700;color:var(--color-navy);margin-bottom:8px}
+.sub{font-size:15px;color:#4A5568;margin-bottom:var(--space-lg)}
+.bu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.bu-card{background:var(--color-softgold);border:1px solid rgba(10,34,64,.12);border-radius:var(--radius-md);padding:16px 18px;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.bu-card:hover{border-color:var(--color-navy);box-shadow:var(--shadow-sticky)}
+.bu-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.bu-badge{display:inline-block;background:var(--color-navy);color:var(--color-gold);font-family:var(--font-data);font-size:12px;font-weight:500;border-radius:var(--radius-sm);padding:2px 9px;margin-right:10px}
+.bu-name{font-family:var(--font-heading);font-size:15px;font-weight:500;color:var(--color-navy)}
+.bu-arrow{color:var(--color-navy);transition:transform .2s}
+.bu-card.open .bu-arrow{transform:rotate(180deg)}
+.bu-products{display:none;font-size:14px;color:#4A5568;margin-top:10px;padding-top:10px;border-top:1px solid rgba(10,34,64,.08)}
+.bu-card.open .bu-products{display:block}
+.modelo{background:var(--color-cream)}
+.steps{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.step{flex:1;min-width:140px;text-align:center;padding:18px 12px;border-radius:var(--radius-md);cursor:pointer;border:1px solid rgba(10,34,64,.12);background:var(--color-steel);color:var(--color-softgold)}
+.step .n{font-family:var(--font-data);font-size:12px;font-weight:500;color:rgba(244,235,208,.7)}
+.step .t{font-family:var(--font-heading);font-size:15px;font-weight:500}
+.step.active{background:var(--color-navy);color:var(--color-softgold);border-color:var(--color-navy)}
+.step.active .n{color:var(--color-gold)}
+#stepdesc{font-size:15px;background:var(--color-gold);border-radius:var(--radius-md);padding:18px 20px;border:1px solid rgba(10,34,64,.08)}
+.global{background:var(--color-navy)}
+.global .eyebrow{color:var(--color-gold)}
+.global h2{color:var(--color-softgold)}
+.regioes{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.regiao{border:1px solid rgba(244,235,208,.45);border-radius:var(--radius-md);padding:16px 12px;text-align:center}
+.regiao .n{font-family:var(--font-heading);font-size:26px;font-weight:700;color:var(--color-gold)}
+.regiao .l{font-size:13px;color:rgba(244,235,208,.8)}
+.sust{font-size:13px;color:rgba(244,235,208,.65);margin-top:var(--space-md)}
+.lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-md);margin-bottom:var(--space-md)}
+label{font-family:var(--font-heading);font-size:13px;font-weight:500;color:var(--color-navy);display:block;margin-bottom:4px}
+input,select{width:100%;border:1px solid rgba(10,34,64,.2);border-radius:var(--radius-sm);padding:11px 12px;font-size:15px;font-family:var(--font-body);background:var(--color-softgold);color:var(--color-charcoal)}
+input:focus,select:focus{outline:2px solid var(--color-navy);border-color:var(--color-navy)}
+#toast{display:none;margin-left:14px;font-size:14px;color:#3B6D11;font-weight:600}
+footer{background:var(--color-navy);padding:var(--space-lg) 0;text-align:center}
+footer p{font-size:12px;color:rgba(244,235,208,.6)}
+@media (max-width:560px){.steps{flex-direction:column}.hero{padding:48px 20px 56px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo-h" aria-label="Aboissa"><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="167.7 317.5 464.7 165"><defs><style>.b{fill:#b68d40;}</style></defs><path class="b" d="M254.46361,363.05587c-23.32664,20.00804-75.64326,60.54497-45.52104,97.56275,12.8627,15.80722,40.50228,21.61221,48.51553,9.13678,13.75532-21.41497-26.08415-43.33924-2.99449-106.69952Z"/><path class="b" d="M276.77531,335.24484c2.51285.67306,4.84365,1.78706,6.90907,3.25228-12.78869,16.55528-20.40471,37.30925-20.40471,59.84735,0,26.06359,10.17706,49.7481,26.77032,67.3043,22.11366-13.44178,36.88465-37.76145,36.88465-65.53123,0-42.32301-34.30957-76.63254-76.63258-76.63254s-76.63254,34.30953-76.63254,76.63254c0,9.80221,1.84343,19.17307,5.19752,27.78892,21.99142-40.28087,56.31917-72.86109,97.90826-92.66162Z"/><path class="b" d="M393.5706,427.03734h-12.76612l-3.69927-11.5693h-18.49637l-3.66301,11.5693h-12.69359l18.93158-52.00744h13.89041l18.49637,52.00744ZM374.42142,406.47373l-5.58518-17.48088c-.41103-1.30563-.70117-2.86512-.87042-4.67849h-.29014c-.12089,1.52323-.42312,3.03437-.90668,4.53342l-5.65771,17.62595h13.31013Z"/><path class="b" d="M410.54374,422.72152h-.14507v4.31582h-11.46049v-54.98136h11.46049v23.42873h.14507c2.82886-4.32791,6.85454-6.49186,12.07704-6.49186,4.7873,0,8.47448,1.64473,11.06155,4.93236,2.58707,3.28824,3.88061,7.7854,3.88061,13.49147,0,6.18963-1.51114,11.15827-4.53342,14.9059-3.02228,3.74823-7.06005,5.62145-12.11331,5.62145-4.56969,0-8.02718-1.74083-10.37247-5.2225ZM410.21733,407.05401v3.80808c0,2.39365.68908,4.37626,2.06724,5.94785,1.37816,1.57219,3.14317,2.35738,5.29504,2.35738,2.61125,0,4.63618-1.00944,6.07479-3.02833,1.43861-2.01828,2.15791-4.87796,2.15791-8.57724,0-3.07003-.65886-5.47033-1.97657-7.19908-1.31772-1.72814-3.19757-2.59312-5.63958-2.59312-2.29693,0-4.20097.85833-5.71211,2.57498-1.51114,1.71726-2.26671,3.95315-2.26671,6.70947Z"/><path class="b" d="M462.69624,427.94402c-6.18963,0-11.05551-1.73479-14.59762-5.20437-3.54211-3.46898-5.31317-8.1783-5.31317-14.12615,0-6.14128,1.83755-10.94671,5.51264-14.41629,3.6751-3.46898,8.64373-5.20437,14.9059-5.20437,6.16546,0,11.00111,1.73539,14.50696,5.20437,3.50585,3.46958,5.25877,8.0574,5.25877,13.76347,0,6.16546-1.80732,11.03798-5.42197,14.61576-3.61465,3.57838-8.56515,5.36757-14.8515,5.36757ZM462.98638,397.76956c-2.70797,0-4.81147.93086-6.31053,2.79259-1.49905,1.86233-2.24858,4.49716-2.24858,7.90629,0,7.13259,2.87721,10.69888,8.63164,10.69888,5.48846,0,8.2327-3.66301,8.2327-10.98902,0-6.93916-2.76841-10.40874-8.30523-10.40874Z"/><path class="b" d="M501.86502,427.03734h-11.46049v-37.13781h11.46049v37.13781ZM501.86502,382.54934h-11.46049v-10.41599h11.46049v10.41599Z"/><path class="b" d="M509.08223,426.05812v-9.28445c1.8859,1.13698,3.76576,1.98262,5.63958,2.53872,1.87382.5567,3.64487.83415,5.31317.83415,2.03097,0,3.63278-.27745,4.80543-.83415,1.17265-.5561,1.75897-1.40173,1.75897-2.53872,0-.72535-.26596-1.3292-.79788-1.81337-.53192-.48357-1.21496-.90668-2.04911-1.26936s-1.74688-.68908-2.73819-.97922-1.94635-.61655-2.86512-.97922c-1.47487-.5561-2.77446-1.15451-3.89874-1.79524-1.12429-.64012-2.06724-1.3836-2.82886-2.23044-.76162-.84624-1.34189-1.82546-1.74083-2.93766-.39894-1.1116-.59841-2.42992-.59841-3.95315,0-2.07933.45334-3.86792,1.36003-5.36757.90668-1.49905,2.1156-2.72549,3.62674-3.68114,1.51114-.95504,3.23989-1.65561,5.18624-2.10351,1.94635-.4473,3.97128-.67095,6.07479-.67095,1.64412,0,3.31242.12694,5.0049.38081s3.36078.62259,5.0049,1.10616v8.84924c-1.4507-.84624-3.00415-1.48092-4.66036-1.90404-1.65621-.42252-3.2822-.63468-4.87796-.63468-.74953,0-1.45674.06709-2.12164.19947-.6649.13298-1.25122.32641-1.75897.58028s-.90668.58028-1.19682.97922-.43521.85228-.43521,1.36003c0,.67699.2176,1.25727.65281,1.74083.43521.48417,1.0034.90124,1.70457,1.25122.70117.35058,1.48092.66551,2.33925.94295.85833.27805,1.71061.56214,2.55685.85228,1.52323.53192,2.90139,1.1122,4.13448,1.74083,1.23309.62924,2.29089,1.36607,3.1734,2.21231.88251.84684,1.5595,1.83755,2.03097,2.97393.47148,1.13698.70721,2.49036.70721,4.06195,0,2.20022-.47752,4.08008-1.43256,5.63958-.95504,1.5595-2.2244,2.82886-3.80808,3.80808-1.58368.97922-3.40913,1.69248-5.47638,2.13978-2.06724.4473-4.21306.67095-6.43746.67095-4.08613,0-7.87002-.62924-11.35169-1.8859Z"/><path class="b" d="M541.75915,426.05812v-9.28445c1.8859,1.13698,3.76576,1.98262,5.63958,2.53872,1.87382.5567,3.64487.83415,5.31317.83415,2.03097,0,3.63278-.27745,4.80543-.83415,1.17265-.5561,1.75897-1.40173,1.75897-2.53872,0-.72535-.26596-1.3292-.79788-1.81337-.53192-.48357-1.21496-.90668-2.04911-1.26936-.83415-.36267-1.74688-.68908-2.73819-.97922-.99131-.29014-1.94635-.61655-2.86512-.97922-1.47487-.5561-2.77446-1.15451-3.89874-1.79524-1.12429-.64012-2.06724-1.3836-2.82886-2.23044-.76162-.84624-1.34189-1.82546-1.74083-2.93766-.39894-1.1116-.59841-2.42992-.59841-3.95315,0-2.07933.45334-3.86792,1.36003-5.36757.90668-1.49905,2.1156-2.72549,3.62674-3.68114,1.51114-.95504,3.23989-1.65561,5.18624-2.10351,1.94635-.4473,3.97128-.67095,6.07479-.67095,1.64412,0,3.31242.12694,5.0049.38081,1.69248.25387,3.36078.62259,5.0049,1.10616v8.84924c-1.4507-.84624-3.00415-1.48092-4.66036-1.90404-1.65621-.42252-3.2822-.63468-4.87796-.63468-.74953,0-1.45674.06709-2.12164.19947-.6649.13298-1.25122.32641-1.75897.58028-.50774.25387-.90668.58028-1.19682.97922s-.43521.85228-.43521,1.36003c0,.67699.2176,1.25727.65281,1.74083.43521.48417,1.0034.90124,1.70457,1.25122.70117.35058,1.48092.66551,2.33925.94295.85833.27805,1.71061.56214,2.55685.85228,1.52323.53192,2.90139,1.1122,4.13448,1.74083,1.23309.62924,2.29089,1.36607,3.1734,2.21231.88251.84684,1.5595,1.83755,2.03097,2.97393.47148,1.13698.70721,2.49036.70721,4.06195,0,2.20022-.47752,4.08008-1.43256,5.63958-.95504,1.5595-2.2244,2.82886-3.80808,3.80808s-3.40913,1.69248-5.47638,2.13978c-2.06724.4473-4.21306.67095-6.43746.67095-4.08613,0-7.87002-.62924-11.35169-1.8859Z"/><path class="b" d="M598.64415,426.74025c-.29739-.93993-.49565-2.02976-.59479-3.2683-1.1388,1.2881-2.64873,2.31567-4.5298,3.08273-1.88349.76706-4.06074,1.15089-6.53659,1.15089-4.20943,0-7.29216-.92845-9.24698-2.78534-1.95723-1.85689-2.93403-4.27049-2.93403-7.24139,0-2.62395.41949-4.71657,1.26211-6.27668.8414-1.5595,2.00559-2.78534,3.49134-3.6763,1.48575-.89157,3.2556-1.54741,5.31075-1.96871,2.05394-.4201,4.29527-.80393,6.72156-1.15089,2.42629-.34575,4.05953-.80453,4.90214-1.37453.8414-.56819,1.26331-1.49663,1.26331-2.78534,0-1.18836-.55731-2.11681-1.67193-2.78534-1.11341-.66792-2.61246-1.00219-4.49353-1.00219-2.22803,0-3.825.49505-4.79092,1.48515-.96471.99131-1.5728,2.30237-1.81941,3.93683h-8.98706c.04836-1.88107.35784-3.61405.92845-5.19953.56819-1.58428,1.48575-2.94552,2.74786-4.08492,1.26331-1.1388,2.90864-2.01707,4.93962-2.63664,2.02976-.61896,4.50562-.92845,7.42756-.92845,2.87117,0,5.31075.32218,7.31634.96532,2.00559.64435,3.61344,1.5728,4.82719,2.78534,1.21254,1.21375,2.09142,2.72368,2.63664,4.53101.54522,1.80793.81723,3.85039.81723,6.12738v23.09991h-8.98706ZM597.97562,408.83987c-.49565.49565-1.21375.89097-2.15428,1.18836s-2.30177.61957-4.08492.96532c-2.77325.54582-4.6797,1.23853-5.71937,2.07993-1.03967.84261-1.5595,2.05515-1.5595,3.63943,0,2.72368,1.5595,4.08552,4.6797,4.08552,1.23672,0,2.3876-.21035,3.45386-.63166,1.06384-.4201,1.97899-.9901,2.74786-1.70819.76645-.71749,1.38541-1.5601,1.85689-2.52542.47027-.96532.70601-1.99289.70601-3.08273l.07374-4.01057Z"/><path class="b" d="M618.36968,397.05722c-2.20395,0-4.08314-.77751-5.63845-2.33297-1.55561-1.55531-2.33297-3.43465-2.33297-5.63845,0-2.20365.77736-4.08299,2.33297-5.63845,1.55531-1.55531,3.4345-2.33297,5.63845-2.33297,2.19627,0,4.07221.77766,5.62782,2.33297,1.55531,1.55546,2.33297,3.4348,2.33297,5.63845,0,2.2038-.77766,4.08314-2.33297,5.63845-1.55561,1.55546-3.43155,2.33297-5.62782,2.33297ZM618.36968,382.04969c-1.94148,0-3.59954.68731-4.97417,2.06194-1.37492,1.37477-2.06194,3.03283-2.06194,4.97417,0,1.94148.68702,3.59777,2.06194,4.96885,1.37463,1.37108,3.03268,2.05663,4.97417,2.05663,1.94119,0,3.59777-.68554,4.96885-2.05663,1.37108-1.37108,2.05663-3.02737,2.05663-4.96885,0-1.94134-.68554-3.59939-2.05663-4.97417-1.37108-1.37463-3.02766-2.06194-4.96885-2.06194ZM622.23847,394.07059h-1.72183l-1.10537-2.43394c-.55977-1.21859-1.16235-1.82811-1.80685-1.82811h-.93531v4.26205h-1.4136v-10.13964h2.84845c1.18331,0,2.0953.24815,2.73685.744.64126.496.96188,1.16914.96188,2.01943,0,.69455-.22497,1.28606-.67491,1.77497-.45024.48891-1.0788.8184-1.88657.98846v.04251c.55948.1206,1.116.744,1.66868,1.87063l1.32857,2.69965ZM616.66911,385.1426v3.46491h1.51988c1.39588,0,2.09383-.58088,2.09383-1.74308,0-.62339-.18777-1.0664-.56331-1.32857-.37584-.26202-.97104-.39326-1.7856-.39326h-1.2648Z"/></svg></div>
+    <div class="langs">
+      <button id="btn-pt" class="on" onclick="setLang('pt')">PT</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <p class="eyebrow" data-pt="Corretora global de commodities · desde 1987" data-en="Global commodity brokers · since 1987">Corretora global de commodities · desde 1987</p>
+  <h1 data-pt="Criamos oportunidades que impulsionam o sucesso dos nossos clientes" data-en="We create opportunities that drive our clients' success">Criamos oportunidades que impulsionam o sucesso dos nossos clientes</h1>
+  <p data-pt="Inteligência de mercado, negociação e execução em mais de 60 países — em uma única mesa." data-en="Market intelligence, negotiation and execution across 60+ countries — from a single desk.">Inteligência de mercado, negociação e execução em mais de 60 países — em uma única mesa.</p>
+  <a class="pill" href="#contato" data-pt="Fale com um especialista" data-en="Talk to a specialist">Fale com um especialista</a>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div><div class="stat-n cnt" data-target="60" data-suffix="+">0</div><div class="stat-l" data-pt="países atendidos" data-en="countries served">países atendidos</div></div>
+    <div><div class="stat-n cnt" data-target="4000" data-suffix="+">0</div><div class="stat-l" data-pt="clientes ativos" data-en="active clients">clientes ativos</div></div>
+    <div><div class="stat-n cnt" data-target="100" data-suffix="+">0</div><div class="stat-l" data-pt="produtos no portfólio" data-en="products in portfolio">produtos no portfólio</div></div>
+    <div><div class="stat-n cnt" data-target="2" data-suffix=" mi+" data-suffix-en="M+">0</div><div class="stat-l" data-pt="toneladas/ano" data-en="tonnes/year">toneladas/ano</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="eyebrow" data-pt="Unidades de negócio" data-en="Business units">Unidades de negócio</p>
+    <h2 data-pt="Oito mesas, um portfólio integrado" data-en="Eight desks, one integrated portfolio">Oito mesas, um portfólio integrado</h2>
+    <p class="sub" data-pt="Toque em uma unidade para ver os principais produtos." data-en="Tap a unit to see its key products.">Toque em uma unidade para ver os principais produtos.</p>
+    <div id="bus" class="bu-grid"></div>
+  </div>
+</section>
+
+<section class="block modelo">
+  <div class="wrap">
+    <p class="eyebrow" data-pt="Modelo operacional" data-en="Operating model">Modelo operacional</p>
+    <h2 data-pt="Da informação ao embarque" data-en="From insight to shipment">Da informação ao embarque</h2>
+    <div class="steps">
+      <div class="step active" onclick="setStep(0)"><div class="n">01</div><div class="t" data-pt="Inteligência" data-en="Intelligence">Inteligência</div></div>
+      <div class="step" onclick="setStep(1)"><div class="n">02</div><div class="t" data-pt="Negociação" data-en="Negotiation">Negociação</div></div>
+      <div class="step" onclick="setStep(2)"><div class="n">03</div><div class="t" data-pt="Execução" data-en="Execution">Execução</div></div>
+    </div>
+    <p id="stepdesc"></p>
+  </div>
+</section>
+
+<section class="block global">
+  <div class="wrap">
+    <p class="eyebrow" data-pt="Presença global" data-en="Global presence">Presença global</p>
+    <h2 data-pt="Origem e destino em cinco continentes" data-en="Origination and destination across five continents">Origem e destino em cinco continentes</h2>
+    <div class="regioes" style="margin-top:24px">
+      <div class="regiao"><div class="n">22</div><div class="l" data-pt="Américas" data-en="Americas">Américas</div></div>
+      <div class="regiao"><div class="n">20</div><div class="l" data-pt="Europa" data-en="Europe">Europa</div></div>
+      <div class="regiao"><div class="n">17</div><div class="l" data-pt="Ásia" data-en="Asia">Ásia</div></div>
+      <div class="regiao"><div class="n">11</div><div class="l" data-pt="África" data-en="Africa">África</div></div>
+      <div class="regiao"><div class="n">2</div><div class="l" data-pt="Oceania" data-en="Oceania">Oceania</div></div>
+    </div>
+    <p class="sust" data-pt="Sustentabilidade: cadeias de palma e soja com referência RSPO · RTRS · ISCC." data-en="Sustainability: palm and soy chains referenced to RSPO · RTRS · ISCC.">Sustentabilidade: cadeias de palma e soja com referência RSPO · RTRS · ISCC.</p>
+  </div>
+</section>
+
+<section class="block" id="contato">
+  <div class="wrap">
+    <p class="eyebrow" data-pt="Contato" data-en="Contact">Contato</p>
+    <h2 data-pt="Continue a conversa depois da feira" data-en="Keep the conversation going after the show">Continue a conversa depois da feira</h2>
+    <div class="lead-grid" style="margin-top:24px">
+      <div><label for="f-nome" data-pt="Nome" data-en="Name">Nome</label><input id="f-nome" autocomplete="name"></div>
+      <div><label for="f-emp" data-pt="Empresa" data-en="Company">Empresa</label><input id="f-emp" autocomplete="organization"></div>
+      <div><label for="f-mail" data-pt="Email corporativo" data-en="Business email">Email corporativo</label><input id="f-mail" type="email" autocomplete="email"></div>
+      <div><label for="f-bu" data-pt="BU de interesse" data-en="Business unit of interest">BU de interesse</label><select id="f-bu"></select></div>
+    </div>
+    <button class="pill" onclick="sendLead()" data-pt="Enviar contato" data-en="Send contact">Enviar contato</button>
+    <span id="toast"></span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p data-pt="Análise de mercado — não constitui recomendação de investimento. © Aboissa Commodity Brokers, 1987–2026." data-en="Market analysis — not investment advice. © Aboissa Commodity Brokers, 1987–2026.">Análise de mercado — não constitui recomendação de investimento. © Aboissa Commodity Brokers, 1987–2026.</p>
+  </div>
+</footer>
+
+<script>
+/* BUs = 7 (ABOISSA-OS V4.2 · paleta oficial por unidade). c=cor do badge, tc=texto AA por cor. */
+const BUS=[
+{s:"SO",pt:"Soft Oils",en:"Soft Oils",c:"#D6B04C",tc:"#0A2240",ppt:"Soja · Milho · Girassol · Canola · Algodão · Azeite",pen:"Soybean · Corn · Sunflower · Canola · Cottonseed · Olive oil"},
+{s:"PL",pt:"Palm & Lauric",en:"Palm & Lauric",c:"#B63C29",tc:"#FFFFFF",ppt:"Palma (CPO/RBD) · Palmiste (PKO) · Coco · Estearina · CBS",pen:"Palm (CPO/RBD) · Palm kernel (PKO) · Coconut · Stearin · CBS"},
+{s:"OP",pt:"Oleochemical",en:"Oleochemical",c:"#37597C",tc:"#FFFFFF",ppt:"Glicerina · Ácidos Graxos · Lecitina · Ureia",pen:"Glycerin · Fatty acids · Lecithin · Urea"},
+{s:"AP",pt:"Animal Profat",en:"Animal Profat",c:"#A45729",tc:"#FFFFFF",ppt:"Sebo · Graxa Suína · Farinhas · Óleos de Peixe",pen:"Tallow · Choice white grease · Meals · Fish oils"},
+{s:"FI",pt:"Feed Ingredients",en:"Feed Ingredients",c:"#4C5E49",tc:"#FFFFFF",ppt:"DDG · Farelos · Polpa Cítrica · Caroço de Algodão",pen:"DDG · Meals · Citrus pulp · Whole cottonseed"},
+{s:"RP",pt:"Retail Products",en:"Retail Products",c:"#B57C88",tc:"#0A2240",ppt:"Lecitina · Glicerina · Óleo Mineral · Lauril (<10 ton)",pen:"Lecithin · Glycerin · Mineral oil · Lauryl (<10 t)"},
+{s:"IE",pt:"Industrial Equipment",en:"Industrial Equipment",c:"#9E9B98",tc:"#0A2240",ppt:"Linha de produtos a definir",pen:"Product line TBD"}];
+const STEPS=[
+{pt:"Monitoramento global de oferta e demanda, matching entre pontas e pricing exclusivo — a informação certa antes do mercado.",en:"Global supply and demand monitoring, counterparty matching and proprietary pricing — the right information ahead of the market."},
+{pt:"Especificações técnicas, Incoterms, instrumentos de pagamento (LC, CAD, DP) e contratos padrão FOSFA.",en:"Technical specs, Incoterms, payment instruments (LC, CAD, DP) and FOSFA standard contracts."},
+{pt:"Checkpoints de T+1 ao desembarque, tracking multimodal e acompanhamento pós-venda.",en:"Checkpoints from T+1 to discharge, multimodal tracking and post-sale follow-up."}];
+let LANG='pt',STEP=0;
+const grid=document.getElementById('bus');
+BUS.forEach(b=>{
+  const d=document.createElement('div');d.className='bu-card';
+  d.innerHTML='<div class="bu-head"><div><span class="bu-badge" style="background:'+b.c+';color:'+b.tc+'">'+b.s+'</span><span class="bu-name">'+b.pt+'</span></div><span class="bu-arrow">▾</span></div><div class="bu-products">'+b.ppt+'</div>';
+  d.onclick=()=>d.classList.toggle('open');
+  grid.appendChild(d);
+});
+const sel=document.getElementById('f-bu');
+function fillSel(){sel.innerHTML='';BUS.forEach(b=>{const o=document.createElement('option');o.textContent=b.s+' — '+(LANG==='pt'?b.pt:b.en);sel.appendChild(o);});}
+function setStep(i){STEP=i;document.querySelectorAll('.step').forEach((s,j)=>s.classList.toggle('active',j===i));document.getElementById('stepdesc').textContent=STEPS[i][LANG];}
+function setLang(l){
+  LANG=l;document.documentElement.lang=l==='pt'?'pt-BR':'en';
+  document.querySelectorAll('[data-pt]').forEach(el=>{el.textContent=el.dataset[l];});
+  document.getElementById('btn-pt').classList.toggle('on',l==='pt');
+  document.getElementById('btn-en').classList.toggle('on',l==='en');
+  document.querySelectorAll('.bu-card').forEach((c,i)=>{c.querySelector('.bu-name').textContent=l==='pt'?BUS[i].pt:BUS[i].en;c.querySelector('.bu-products').textContent=l==='pt'?BUS[i].ppt:BUS[i].pen;});
+  fillSel();setStep(STEP);
+  document.querySelectorAll('.cnt').forEach(el=>{if(el.dataset.done)el.textContent=fmtCnt(el,+el.dataset.target);});
+  try{localStorage.setItem('aboissa-lang',l)}catch(e){}
+}
+function fmtCnt(el,v){
+  const suf=LANG==='pt'?(el.dataset.suffix||''):(el.dataset.suffixEn!==undefined?el.dataset.suffixEn:(el.dataset.suffix||''));
+  return v.toLocaleString(LANG==='pt'?'pt-BR':'en-US')+suf;
+}
+function sendLead(){
+  const t=document.getElementById('toast');t.style.display='inline';
+  t.textContent=LANG==='pt'?'Recebido — nossa equipe retorna em até 2h úteis.':'Received — our team replies within 2 business hours.';
+  setTimeout(()=>t.style.display='none',5000);
+}
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
+  const el=e.target,target=+el.dataset.target;let cur=0;const inc=Math.max(1,Math.ceil(target/40));
+  const tick=setInterval(()=>{cur=Math.min(target,cur+inc);el.textContent=fmtCnt(el,cur);if(cur>=target){clearInterval(tick);el.dataset.done='1';}},30);
+});},{threshold:.4});
+document.querySelectorAll('.cnt').forEach(el=>io.observe(el));
+fillSel();setStep(0);
+let saved=null;try{saved=localStorage.getItem('aboissa-lang')}catch(e){}
+if(saved==='en'||(!saved&&navigator.language&&!navigator.language.startsWith('pt')))setLang('en');
+</script>
+</body>
+</html>
