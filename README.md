@@ -4,7 +4,6 @@ Apresentação institucional interativa da **Aboissa Commodity Brokers** — tri
 
 **No ar:** https://1marcelserrano.github.io/aboissa-folder/
 **Mockup impresso (tríptico):** https://1marcelserrano.github.io/aboissa-folder/impresso/a/
-**Briefing + roadmap:** [BRIEFING.md](BRIEFING.md)
 
 Corretora global de commodities desde 1987 — inteligência de mercado, negociação e execução em mais de 60 países.
 
